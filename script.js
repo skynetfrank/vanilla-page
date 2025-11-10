@@ -157,3 +157,14 @@ if (modal) {
         }
     });
 }
+
+// Carga Font Awesome de forma asíncrona
+function loadFontAwesome() {
+    var script = document.createElement('script');
+    script.src = 'https://kit.fontawesome.com/tu-kit-id.js';
+    script.crossOrigin = 'anonymous';
+    document.head.appendChild(script);
+}
+
+// Llama a la función para cargar Font Awesome cuando la página se carga
+window.onload = loadFontAwesome;
