@@ -192,16 +192,76 @@ const toggleItem = (item) => {
 
 /*=============== MOSTRAR BOTÓN SCROLL UP ===============*/
 const scrollUp = () => {
+    // Lógica para el botón de scroll up
     const scrollUpButton = document.getElementById('scroll-up');
-    // Cuando el scroll es mayor a 400 de altura del viewport, añade la clase show-scroll
     if (window.scrollY >= 400) {
         scrollUpButton.classList.add('show-scroll');
     } else {
         scrollUpButton.classList.remove('show-scroll');
     }
+
+    // Lógica para el cambio de fondo del header
+    const header = document.querySelector('.header');
+    // Cuando el scroll es mayor a 50 de altura del viewport, añade la clase scroll-header
+    if (window.scrollY >= 50) header.classList.add('scroll-header');
+    else header.classList.remove('scroll-header');
+
+    // Lógica para resaltar el enlace del menú activo (Scrollspy)
+    highlightMenu();
+
+    // Lógica para revelar elementos al hacer scroll
+    revealElementsOnScroll();
 }
 
-window.addEventListener('scroll', scrollUp);
+const highlightMenu = () => {
+    const scrollY = window.scrollY;
+    const sections = document.querySelectorAll('section[id]');
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 58; // Un pequeño offset
+        const sectionId = current.getAttribute('id');
+        const link = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+
+        if (link) {
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                link.classList.add('active-link');
+            } else {
+                link.classList.remove('active-link');
+            }
+        }
+    });
+}
+
+/*=============== REVEAL ELEMENTS ON SCROLL ===============*/
+// Selecciona todos los elementos que queremos animar (en este caso, las tarjetas de servicio)
+const revealElements = document.querySelectorAll('.service-card');
+
+// Función para verificar si un elemento está en el viewport
+const isElementInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    // Retorna true si el elemento está al menos parcialmente visible
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+        rect.bottom >= 0 &&
+        rect.right >= 0
+    );
+};
+
+// Función para revelar elementos al hacer scroll
+const revealElementsOnScroll = () => {
+    revealElements.forEach(el => {
+        if (isElementInViewport(el)) {
+            el.classList.add('revealed');
+        }
+        // Opcional: Si quieres que la animación se repita cada vez que el elemento entra/sale del viewport,
+        // puedes añadir un 'else' para remover la clase 'revealed' cuando sale.
+        // else {
+        //     el.classList.remove('revealed');
+        // }
+    });
+};
 
 
 // Carga Font Awesome de forma asíncrona
@@ -212,5 +272,11 @@ function loadFontAwesome() {
     document.head.appendChild(script);
 }
 
-// Llama a la función para cargar Font Awesome cuando la página se carga
-window.onload = loadFontAwesome;
+// Llama a las funciones cuando la página se carga
+window.addEventListener('load', () => {
+    loadFontAwesome(); // Carga Font Awesome
+    revealElementsOnScroll(); // Revela elementos que ya están en el viewport al cargar
+});
+
+// También llama a revealElementsOnScroll en cada evento de scroll
+window.addEventListener('scroll', scrollUp);

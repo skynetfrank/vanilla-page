@@ -84,11 +84,19 @@ img {
 /*=============== HEADER & NAV ===============*/
 .header {
     width: 100%;
-    background-color: var(--body-color);
+    background-color: transparent;
+    /* Fondo inicial transparente */
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
+    transition: background-color .4s, box-shadow .4s;
+    /* Transición suave */
+}
+
+/* Estilo del header al hacer scroll */
+.scroll-header {
+    background-color: var(--body-color);
     box-shadow: 0 2px 4px hsla(0, 0%, 15%, 0.1);
 }
 
@@ -125,7 +133,8 @@ img {
 .nav__link {
     color: var(--title-color);
     font-weight: 600;
-    position: relative; /* Necesario para el pseudo-elemento ::after */
+    position: relative;
+    /* Necesario para el pseudo-elemento ::after */
     transition: color .3s;
 }
 
@@ -139,13 +148,24 @@ img {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -5px; /* Distancia de la línea al texto */
+    bottom: -5px;
+    /* Distancia de la línea al texto */
     left: 0;
     background-color: var(--primary-color);
     transition: width .3s ease-in-out;
 }
 
 .nav__link:hover::after {
+    width: 100%;
+}
+
+/* Estilo para el enlace activo en el menú */
+.active-link {
+    color: var(--primary-color);
+}
+
+/* Muestra el subrayado para el enlace activo */
+.active-link::after {
     width: 100%;
 }
 
@@ -205,6 +225,13 @@ img {
     border-radius: .5rem;
     text-align: center;
     box-shadow: 0 2px 8px hsla(0, 0%, 15%, 0.1);
+    /* Sombra existente */
+    opacity: 0;
+    /* Inicialmente oculto */
+    transform: translateY(20px);
+    /* Ligeramente desplazado hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    /* Transición suave */
 }
 
 .service-card__icon {
@@ -375,6 +402,12 @@ img {
 /* Clase para mostrar el botón */
 .show-scroll {
     bottom: 3rem;
+}
+
+/* Clase para revelar elementos al hacer scroll */
+.service-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /*=============== MEDIA QUERIES ===============*/
