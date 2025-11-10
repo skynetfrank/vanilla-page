@@ -125,6 +125,28 @@ img {
 .nav__link {
     color: var(--title-color);
     font-weight: 600;
+    position: relative; /* Necesario para el pseudo-elemento ::after */
+    transition: color .3s;
+}
+
+.nav__link:hover {
+    color: var(--primary-color);
+}
+
+/* Efecto de subrayado animado en el hover */
+.nav__link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px; /* Distancia de la línea al texto */
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width .3s ease-in-out;
+}
+
+.nav__link:hover::after {
+    width: 100%;
 }
 
 .nav__close {
