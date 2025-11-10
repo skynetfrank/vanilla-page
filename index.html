@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LimpioYa - Servicios de Limpieza Profesional</title>
+    <meta name="description"
+        content="Ofrecemos servicios de limpieza profesionales para hogares y oficinas. ¡Tu espacio impecable con LimpioYa!">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">LimpioYa</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#servicios" class="nav__link">Servicios</a></li>
+                    <li class="nav__item"><a href="#testimonios" class="nav__link">Testimonios</a></li>
+                    <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Tu espacio, impecable y fresco.</h1>
+                    <p class="hero__description">Servicios de limpieza profesionales para hogares y oficinas. Nos
+                        adaptamos a tus necesidades.</p>
+                    <a href="#contacto" class="button button--primary">Solicita un Presupuesto</a>
+                </div>
+                <div class="hero__image">
+                    <img src="https://images.pexels.com/photos/4107286/pexels-photo-4107286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Persona limpiando una superficie de vidrio">
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="services section">
+            <div class="container">
+                <h2 class="section__title">Nuestros Servicios</h2>
+                <div class="services__container">
+                    <div class="service-card">
+                        <i class="fas fa-home service-card__icon"></i>
+                        <h3 class="service-card__title">Limpieza de Hogares</h3>
+                        <p class="service-card__description">Limpieza profunda o de mantenimiento para que tu casa
+                            siempre luzca perfecta.</p>
+                        <div class="service-card__gallery">
+                            <div class="service-card__image-container">
+                                <img class="gallery-image"
+                                    src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Cocina desordenada antes de la limpieza">
+                                <img class="gallery-image"
+                                    src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Cocina limpia y ordenada después de la limpieza">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-building service-card__icon"></i>
+                        <h3 class="service-card__title">Limpieza de Oficinas</h3>
+                        <p class="service-card__description">Un ambiente de trabajo limpio y ordenado para mejorar la
+                            productividad.</p>
+                        <div class="service-card__gallery">
+                            <div class="service-card__image-container">
+                                <img class="gallery-image"
+                                    src="https://images.pexels.com/photos/1181303/pexels-photo-1181303.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Oficina desordenada antes de la limpieza">
+                                <img class="gallery-image"
+                                    src="https://images.pexels.com/photos/260689/pexels-photo-260689.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Oficina limpia y ordenada después de la limpieza">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-concierge-bell service-card__icon"></i>
+                        <h3 class="service-card__title">Limpieza Especializada</h3>
+                        <p class="service-card__description">Limpieza de cristales, alfombras y otros servicios a
+                            medida.</p>
+                        <div class="service-card__gallery">
+                            <div class="service-card__image-container">
+                                <img class="gallery-image"
+                                    src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Alfombra sucia antes de la limpieza especializada">
+                                <img class="gallery-image"
+                                    src="https://images.pexels.com/photos/3617455/pexels-photo-3617455.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Alfombra limpia después de la limpieza especializada">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="testimonials section">
+            <div class="container">
+                <h2 class="section__title">¿Qué dicen nuestros clientes?</h2>
+                <div class="testimonials__container">
+                    <div class="testimonial-card">
+                        <p class="testimonial-card__text">"¡El equipo de LimpioYa es increíble! Dejaron mi apartamento
+                            reluciente. Totalmente recomendados."</p>
+                        <span class="testimonial-card__author">- Ana Pérez</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-card__text">"Contratamos sus servicios para nuestra oficina y la
+                            diferencia es notable. Muy profesionales y eficientes."</p>
+                        <span class="testimonial-card__author">- Carlos Gómez, Gerente de Operaciones</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto" class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <h2 class="section__title">Contacta con Nosotros</h2>
+                <p>¿Listo para disfrutar de un espacio más limpio? Rellena el formulario y te contactaremos a la
+                    brevedad.</p>
+            </div>
+            <div class="footer__form">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                        <p class="error-message"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <p class="error-message"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <p class="error-message"></p>
+                    </div>
+                    <button type="submit" class="button button--primary">Enviar Mensaje</button>
+                </form>
+                <p id="form-success" class="form-success-message"></p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 LimpioYa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!--=============== MODAL DE LA GALERÍA ===============-->
+    <div class="modal" id="gallery-modal">
+        <div class="modal__content">
+            <i class="fas fa-chevron-left modal__arrow modal__arrow--left" id="modal-arrow-left"></i>
+            <i class="fas fa-chevron-right modal__arrow modal__arrow--right" id="modal-arrow-right"></i>
+            <img src="" alt="Imagen ampliada de la galería" class="modal__image" id="modal-image">
+            <i class="fas fa-times modal__close" id="modal-close"></i>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
