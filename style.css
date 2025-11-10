@@ -326,6 +326,34 @@ img {
     transform: rotate(180deg);
 }
 
+/*=============== SCROLL UP ===============*/
+.scrollup {
+    position: fixed;
+    right: 1rem;
+    bottom: -30%;
+    /* Oculto por defecto fuera de la pantalla */
+    background-color: var(--primary-color);
+    padding: .5rem;
+    border-radius: .25rem;
+    z-index: 10;
+    opacity: .8;
+    transition: .4s;
+}
+
+.scrollup:hover {
+    background-color: var(--primary-color-alt);
+    opacity: 1;
+}
+
+.scrollup__icon {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+/* Clase para mostrar el botón */
+.show-scroll {
+    bottom: 3rem;
+}
 
 /*=============== MEDIA QUERIES ===============*/
 /* Para dispositivos medianos (tabletas) */

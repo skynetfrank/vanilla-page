@@ -190,6 +190,20 @@ const toggleItem = (item) => {
     }
 };
 
+/*=============== MOSTRAR BOTÓN SCROLL UP ===============*/
+const scrollUp = () => {
+    const scrollUpButton = document.getElementById('scroll-up');
+    // Cuando el scroll es mayor a 400 de altura del viewport, añade la clase show-scroll
+    if (window.scrollY >= 400) {
+        scrollUpButton.classList.add('show-scroll');
+    } else {
+        scrollUpButton.classList.remove('show-scroll');
+    }
+}
+
+window.addEventListener('scroll', scrollUp);
+
+
 // Carga Font Awesome de forma asíncrona
 function loadFontAwesome() {
     var script = document.createElement('script');
