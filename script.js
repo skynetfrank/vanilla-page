@@ -158,6 +158,38 @@ if (modal) {
     });
 }
 
+/*=============== ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ) ===============*/
+const faqItems = document.querySelectorAll('.faq__item');
+
+faqItems.forEach((item) => {
+    const faqHeader = item.querySelector('.faq__header');
+
+    faqHeader.addEventListener('click', () => {
+        const openItem = document.querySelector('.faq-open');
+
+        // Cierra el item que ya está abierto (si no es el mismo que se clickeó)
+        if (openItem && openItem !== item) {
+            toggleItem(openItem);
+        }
+
+        // Abre o cierra el item actual
+        toggleItem(item);
+    });
+});
+
+const toggleItem = (item) => {
+    const faqContent = item.querySelector('.faq__content');
+    item.classList.toggle('faq-open');
+
+    if (item.classList.contains('faq-open')) {
+        // Si se abre, se establece la altura máxima al alto real del contenido
+        faqContent.style.maxHeight = faqContent.scrollHeight + 'px';
+    } else {
+        // Si se cierra, se vuelve a 0
+        faqContent.style.maxHeight = '0';
+    }
+};
+
 // Carga Font Awesome de forma asíncrona
 function loadFontAwesome() {
     var script = document.createElement('script');
